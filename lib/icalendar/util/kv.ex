@@ -88,9 +88,9 @@ defmodule ICalendar.Util.KV do
           ";#{key}=#{val}"
         end
 
-      "ATTENDEE#{params}:#{attendee.original_value}"
+      "ATTENDEE#{params}:#{attendee.original_value}\n"
     end)
-    |> Enum.join("\n")
+    |> Enum.join("")
   end
 
   def build("ORGANIZER", %{} = organizer) do
